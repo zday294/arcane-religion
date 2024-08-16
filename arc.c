@@ -28,19 +28,9 @@ int performSimulations(int numSim, int maxAttempts, int minRollRel, int minRollA
     return numRolls;
 }
 
-int calcAvgAttempts(int numRolls, int numSim) {
-    return numRolls / numSim;
-}
-
-
-int calculateCost(int avgAttempts, int costInit, int costFail) {
-    return costInit + ((avgAttempts -1) * costFail);
-}
-
-
-int callFromPython(int costInit, int costFail, int numSim, int maxAttempts, int minRollRel, int minRollArc) {
+int calculateCost(int costInit, int costFail, int numSim, int maxAttempts, int minRollRel, int minRollArc) {
     int numRolls = performSimulations(numSim, maxAttempts, minRollRel, minRollArc);
-    int avgAttempts = calcAvgAttempts(numRolls, numSim);
-    return calculateCost(avgAttempts, costInit, costFail);
+    int avgAttempts = numRolls / numSim;
+    return costInit + ((avgAttempts -1) * costFail);
 }
 

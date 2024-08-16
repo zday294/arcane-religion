@@ -3,3 +3,4 @@ arc.o
 arclib.so
 .vscode
 *.csv
+__pycache__

@@ -8,4 +8,4 @@ shared: arc.o
 	gcc arc.o -shared -o arclib.so
 
 base: arc.c
-	gcc -c -fPIC arc.c -o arc.o
+	gcc -Wall -Wextra -c -fPIC arc.c -o arc.o

@@ -2,5 +2,5 @@ simulations: 1000
 attempts: 10
 spell-table-file: spell-listing.csv
 player-stats-file: caladon-stats.csv
-out-gold-file: gold-cost.csv
-out-time-file: time-cost.csv
+output-gold-file: gold-cost.csv
+output-time-file: time-cost.csv
