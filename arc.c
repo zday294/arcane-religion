@@ -1,5 +1,6 @@
 // arc.c
 #include "stdlib.h"
+#include "math.h"
 #define TRUE 1
 #define FALSE 0
 
@@ -29,11 +30,9 @@ int performSimulations(int numSim, int maxAttempts, int minRollRel, int minRollA
 }
 
 int calculateCost(int costInit, int costFail, int numSim, int maxAttempts, int minRollRel, int minRollArc) {
-    int numRolls = performSimulations(numSim, maxAttempts, minRollRel, minRollArc);
-    int avgAttempts = numRolls / numSim;
-    // if (numRolls % numSim > 0){
-    //     avgAttempts++;
-    // }
+    float numRolls = performSimulations(numSim, maxAttempts, minRollRel, minRollArc);
+    float avgAttempts = numRolls / numSim;
+    avgAttempts = ceil(avgAttempts) - 1;
     return costInit + (avgAttempts * costFail);
 }
 
