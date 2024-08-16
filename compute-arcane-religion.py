@@ -1,5 +1,7 @@
 # mcgee's method
 from ctypes import cdll
+import csv
+from spell_listing import SpellListing
 
 
 def gatherInputs():
@@ -18,12 +20,22 @@ def gatherInputs():
     attempts = input("Max attempts per simulation: ")
     return cost_initial, cost_failure, min_roll, simulations, attempts
 
-def main():
+def manual_one_time():
     lib = cdll.LoadLibrary('./arclib.so')
     cost_initial, cost_failure, min_roll, simulations, attempts = gatherInputs()
     total_cost = lib.callFromPython(int(cost_initial), int(cost_failure), int(simulations), int(attempts), int(min_roll))
     print(f"Total cost: {total_cost}")
 
+def load_spell_table(spell_table: str):
+    with open(spell_table, mode='r') as file:
+        csv_reader = csv.DictReader(file, fieldnames=['level','gp-init','gp-setback','time-init','time-setback','religion','arcana'])
+        spell_list = []
+        for row in csv_reader:
+            listing = SpellListing(row['level'], row['gp-init'], row['gp-setback'], row['time-init'], row['time-setback'], row['religion'], row['arcana'])
+            spell_list.append(listing)
+
+def main():
+    manual_one_time()
 
 if __name__ == "__main__":
     main()
