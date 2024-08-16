@@ -7,6 +7,6 @@ int calcAvgAttempts(int numRolls, int numSim);
 
 int calculateCost(int avgAttempts, int costInit, int costFail);
 
-int callFromPython(int costInit, int costFail, int numSim, int maxAttempts, int minRoll);
+int callFromPython(int costInit, int costFail, int numSim, int maxAttempts, int minRollRel, int minRollArc);
 
 #endif
