@@ -7,18 +7,28 @@ from spell_listing import SpellListing
 def gatherInputs():
     cost_initial = input("Cost of intial attempt: ")
     cost_failure = input("Cost of failure: ")
-    min_roll = ""
+    min_religion_roll = ""
     between_1_20 = False
     while not between_1_20:
-        min_roll = int(input("Minimum roll (1-20): "))
-        if min_roll >= 1 and min_roll <= 20:
+        min_religion_roll = int(input("Minimum  Religion roll (1-20): "))
+        if min_religion_roll >= 1 and min_religion_roll <= 20:
             between_1_20 = True
         else:
             print("Please enter a number between 1 and 20")
 
+    min_arcana_roll = ""
+    between_1_20 = False
+    while not between_1_20:
+        min_arcana_roll = int(input("Minimum  Religion roll (1-20): "))
+        if min_arcana_roll >= 1 and min_arcana_roll <= 20:
+            between_1_20 = True
+        else:
+            print("Please enter a number between 1 and 20")
+    
+
     simulations = input("Simulations: ") 
     attempts = input("Max attempts per simulation: ")
-    return cost_initial, cost_failure, min_roll, simulations, attempts
+    return cost_initial, cost_failure, min_religion_roll, simulations, attempts
 
 def manual_one_time():
     lib = cdll.LoadLibrary('./arclib.so')
