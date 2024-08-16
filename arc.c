@@ -10,18 +10,17 @@ int performSimulations(int numSim, int maxAttempts, int minRollRel, int minRollA
     int roll;
     for (i = 0; i < numSim; i++) {
         int religionPassed = FALSE;
-        int arcanePassed = FALSE;
         numAttempts = 0;
-        while (numAttempts < maxAttempts && (!religionPassed || !arcanePassed)) {
+        while (numAttempts < maxAttempts && !religionPassed ) {
             numRolls++;
             roll = (rand() % 20) + 1;
-            if (roll >= minRollRel || religionPassed) {
+            if (roll >= minRollRel || religionPassed) { //move on if we pass the religion check or have previously passed the religion check
                 roll = (rand() % 20) + 1;
                 if (roll >= minRollArc) {
                     break;
                 }
             } 
-            if (!(religionPassed && arcanePassed)){
+            if (!religionPassed){
                 numAttempts++;
             }
         }
