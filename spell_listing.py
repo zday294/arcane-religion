@@ -1,5 +1,5 @@
 class SpellListing:
-    def __init__(self, level, gp_init, gp_setback, time_init, time_setback, religion, arcana):
+    def __init__(self, level: int, gp_init: int, gp_setback: int, time_init: int, time_setback: int, religion: int, arcana: int):
         self.level = level
         self.gp_init = gp_init
         self.gp_setback = gp_setback
