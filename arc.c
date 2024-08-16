@@ -31,6 +31,9 @@ int performSimulations(int numSim, int maxAttempts, int minRollRel, int minRollA
 int calculateCost(int costInit, int costFail, int numSim, int maxAttempts, int minRollRel, int minRollArc) {
     int numRolls = performSimulations(numSim, maxAttempts, minRollRel, minRollArc);
     int avgAttempts = numRolls / numSim;
-    return costInit + ((avgAttempts -1) * costFail);
+    // if (numRolls % numSim > 0){
+    //     avgAttempts++;
+    // }
+    return costInit + (avgAttempts * costFail);
 }
 
