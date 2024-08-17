@@ -6,7 +6,7 @@ Because it's so expensive and time consuming and has a chance of not even workin
 
 ## So how is all of this working mechanically in game?
 
-> **Heads Up**: If you don't understand DnD 5e, this next part probably isn't going to make sense. I recommend skipping ahead to [So how has calculating all this gone?](##so-how-has-calculating-all-this-gone?). If you do want to understand this part, it relies on the Basic Rules which you can find for free all over the web. D&D Beyond has them [here at this link](https://www.dndbeyond.com/sources/dnd/basic-rules-2014). Yes, the 2014 rules are what I'm operating on. It's the system I know and... use. It's a lot to read - it's basically a textbook - so I *really* don't recommend doing this unless you actually want to learn how to play DnD, and even then, YouTube videos will likely explain it all far better.
+> **Heads Up:** If you don't understand DnD 5e, this next part probably isn't going to make sense. I recommend skipping ahead to [So how has calculating all this gone?](##so-how-has-calculating-all-this-gone?). If you do want to understand this part, it relies on the Basic Rules which you can find for free all over the web. D&D Beyond has them [here at this link](https://www.dndbeyond.com/sources/dnd/basic-rules-2014). Yes, the 2014 rules are what I'm operating on. It's the system I know and... use. It's a lot to read - it's basically a textbook - so I *really* don't recommend doing this unless you actually want to learn how to play DnD, and even then, YouTube videos will likely explain it all far better.
 
 Let me introduce these handy dandy charts my DM gave me which outline everything my DM told me I need to do when trying learn a cleric or Paladin spell.
 
@@ -19,15 +19,22 @@ Let me introduce these handy dandy charts my DM gave me which outline everything
 |Setback Time|1 day|2 days|1 workweek|1 workweek|2 workweeks|2 workweeks|
 |Religion Check DC|18|18|18|20|20|20|
 |Arcana Check DC|14|16|18|20|22|25|
-|*A workweek is defined as 5 days of work.|
 
-The first chart explains the process of learning a spell. Once material components are purchased, including some written form of the spell such as a spell scroll, the Wizard must first spend the time and gold to research the spell. After this is complete, the Wizard makes a Religion check to represent decrypting the sepll. TODO: come back to this when you have more definitive answers from Troy.
+*\*A workweek is defined as 5 days of work. A day of work is 8 hours.*
+
+The first chart explains the process of learning a spell. Once material components are purchased, including some written form of the spell such as a spell scroll, the Wizard must first spend the time and gold to research the spell. After this is complete, the Wizard makes a Religion check to represent decrypting the sepll followed by an Arcana check to translate the spell into arcane notation. Failing either check results in a setback of time listed in the second table and additional gold equal to 1/3 the of the initial cost. The Arcana check is made only after the Religion check is finished, but once the Religion check succeeds, it does not need to be repeated should the Arcana check fail. Once both checks have passed, the spell is added to the Wizard's spellbook.
+
+> **Aids this process:**  Given the difficulty, it would be really nice to have some help, whether magical or personal, yes? Well, yeah, but the short version is that it requires said help to be available for the entire time. Even with clerics in my party, I doubt I'm going to find one willing to cast Guidance on me for 8 hours straight, 5 days a week, for up to a month. So I'm not really considering aid in my calculations. Plus it would make programming this *so much more complex*.
+
+The second chart is just all the numbers I need to know for the process. Asssuming adequate explanation of the process, this chart should be pretty intuitive. GP and Time are the bare minimum costs, setback time scales weird but it's still tied to spell level, and same for the Religion and Arcana checks. This table has been translated into the [spell-listing.csv](spell-listing.csv) file for convenient loading into the system.
+
+The final rule that tempers this whole process is that the maximum level of spell a wizard can learn for a Cleric or Paladin spell is limited by their Wisdom or Charisma modifier respectively. If it's on both lists, the Wizard can learn the spell as long as one of the modifiers is high enough.
 
 ### How does your character stack up in all this?
 
 Short answer: ok, but with a ton of room for improvement.
 
-Long answer: my character, Caladon, is (at time of writing) a level 9 Wizard with an Intelligence score of 19, Wisdom of 11, Charisma of 12, and proficiency in Arcana. This means that he has a +4 to Religion checks and a +8 to Arcana checks. Not great, especially, for the Religion checks. And given the requirements to learn Cleric and Paladin spells of certain levels, he can't even learn that much. So uh... introducing the game plan for Caladon's advancement!
+Long answer: my character, Caladon, is (at time of writing) a level 9 Wizard with an Intelligence score of 19, Wisdom of 11, Charisma of 12, and proficiency in Arcana. This means that he has a +4 to Religion checks and a +8 to Arcana checks. Not great, especially, for the Religion checks. And given the requirements to learn Cleric and Paladin spells of certain levels, he can't even learn that much. So uh... \*booming announcer voice\* INTRODUCING THE GAME PLAN FOR CALADON'S ADVANCEMENT.
 
 ### The Game Plan for Caladon's Advancement
 
@@ -47,19 +54,21 @@ So all of that is true, *assuming* we're continuing with Wizard here. That would
 
 "Ok, but why now? Rogue gets 2 Expertises and 1 skill when you multiclass into them, so why not pick it up at say level 10"
 
-Rogues apparently aren't religious and can't pick up the Religion skill. Which, given that in most DnD worlds, gods exist for basically everything, is surprising as I'd think that knowing which gods you can invoke on your crime spree and which gods to stay away from would be really useful in trying to stay on the right side of the wrong side of the law. But what do I know? Anyways, yeah, with one level dip into Rogue, I get two expertises, a Rogue skill choice, proficiency in Thieves' tools, and Sneak Attack. Oh, and Thieves' Cant, though I don't see myself using that much. For Expertises, I'm picking Religion to be better at this whole mess (aka the entire reason I'm dipping into this class) and Persuasion so I can better convince the rich people to help me in my attempts to go against the gods.
+Rogues apparently aren't religious and can't pick up the Religion skill. Which, given that in most DnD worlds, gods exist for basically everything, is surprising as I'd think that knowing which gods you can invoke on your crime spree and which gods to stay away from would be really useful in trying to stay on the right side of the wrong side of the law, but what do I know? Since I can't pick up Religion from Rogue and need to have the proficiency from somewhere to be able to gain expertise, I picked it up at 12 and now expertise it here at 13.
+
+Anyways, yeah, with one level dip into Rogue, I get the Expertise I wanted and bothered even dipping into this class for, plus a bunch of other stuff I either don't or only mildly care about, and an extre Expertise that I will use on Persuasion so I can better convince the rich people to help me in my attempts to go against the gods.
 
 #### Level 17
 
-So, now that I've delayed all my Wizard progression by a level, I get both a Proficiency Bonus increase thus increasing my Arcana and Religion bonuses by 2, and I get an ASI or Feat. I plan to take two increases to my Wisdom score so I can learn level 2 Cleric spells.
+So, now that I've delayed all my Wizard progression by a level, I get  a Proficiency Bonus increase which, due to Expertise, increases my Arcana and Religion bonuses by 2, and I get an ASI or Feat at the same level. I plan to take two increases to my Wisdom score so I can learn level 2 Cleric spells.
 
 #### Level 20
 
 Here we are - the final level. Assuming somehow I get this far without having drawn the ire of every god in the pantheon, I'll have given up my capstone feature of having an extra Counterspell and Fireball per day. And what do I get?
 
-Another two increases to Wisdom score, meaning I will then be able to start learning 3rd level Cleric spells. What's an extra fireball when you can become anathema?
+Another two increases to Wisdom score, meaning I will then be able to start learning 3rd level Cleric spells. What's an extra Fireball when you can become anathema?
 
-#### Table of all that stuff I just explained
+#### Table summarizing all that stuff I just explained
 
 |Character Level|Religion Bonus|Arcana Bonus|Max Level Cleric Spell|Max Level Paladin Spell|Notable changes|
 |-|-|-|-|-|-|
@@ -79,13 +88,13 @@ On my first attempt to do all these calculations, I opted to give ChatGPT the pr
 
 $$Expected Cost = C_{i} + (\frac{P_{f}}{1 - P_{f}}) \times C_{f}$$
 
-In this formula, the Expected Cost of a character attempting to learn a Cleric or Paladin spell is calculated based on three variables: the initial cost $C_{i}$, the cost of failure C<sub>f</sub>, and the percent chance of failure P<sub>f</sub>. Given that the process requires rolling two different times, I added an additional $(\frac{P_{f}}{1 - P_{f}}) \times C_{f}$ so the final formula for this method came out to be
+In this formula, the Expected Cost of a character attempting to learn a Cleric or Paladin spell is calculated based on three variables: the initial cost $C_{i}$, the cost of failure C<sub>f</sub>, and the percent chance of failure P<sub>f</sub>. Given that the process requires rolling two different times, I added an additional $(\frac{P_{f}}{1 - P_{f}}) \times C_{f}$ so the final formula for this method came out to be:
 
 $$Expected Cost = C_{i} + (\frac{P_{fr}}{1 - P_{fr}}) \times C_{f} + (\frac{P_{fa}}{1 - P_{fa}}) \times C_{f}$$
 
 In this second formula, $P_{fr}$ represents the percentage chance of failure for the Religion check, and $P_{fa}$ represents the same but for Arcana. Now that I had this formula, all I had to do was plug it into a spreadsheet with my statistics and play around with some forumlas until I had a bunch of tables telling me not only how much an individual spell would cost at my current level, but also how much they cost cumulatively at future levels and a few steps in between those.
 
-Using this method, I worked it out to be around 500,000GP and about 8 years to learn everything that Clerics and Paladins have but Wizards don't. For the spells my character could actually learn, I calculated closer to 26,000GP and 1.25 years. This total assumes that I pick up all the spells of a given level between the first character level I can learn them and the last level that I have the same stats. Good thing this guy is an elf (though much of this may just be what he does after the adventures are over lol). For individual spells, here are the tables for gold and days.
+Using this method, I worked it out to be around 500,000GP and about 8 years to learn everything that Clerics and Paladins have but Wizards don't. For the spells my character could actually learn, I calculated closer to 26,000GP and 1.25 years. This total assumes that I pick up all the spells of a given level between the first character level I can learn them and the last level that I have the same stats. Good thing this guy is an elf (though much of this may just be what he does after the adventures are over lol). Here are the tables for gold and days for a single spell of a given level learned at a given minimum character level.
 
 #### Gold
 
@@ -111,11 +120,11 @@ I was overall pretty satisfied with this answer as it gave me number, but...
 
 Given that I wasn't sure about the math of it (AI reliability in 2024, am I right?), I reached out to one of my old college profesors to ask him about the problem. Turns out my original method, courtesy of ChatGPT, was not great. The main problem he identified was that it wasn't going to properly handle repeated failures. Kinda essential given that the potential for repeating the failure is the main reason I even need to do this calculation. RIP all the hours putting together that spreadsheet. Ok then, now what?
 
-Introducing, Monte Carlo methods, a type of mathematics that's apparently too advanced for a Bachelor's degree in computer science so lucky me I've got a friend who went to grad school. What's a Monte Carlo method you ask? Honestly, I barely understand it. [Here's the Wikipedia article on the thing](https://en.wikipedia.org/wiki/Monte_Carlo_method) if you really want to learn about the it yourself. The short version of why we're using it here is that instead of needing to define a formula for calculating how much this thing is going to cost (like I tried to do with ChatGPT), we can just use a random number generator to simulate rolling the dice like a million times. It's like that Dr. Strange "I've looked into 14,000,605 futures" thing only instead of finding the one where I win, I find the one that's most likely to happen.
+Introducing Monte Carlo methods, a type of mathematics that's apparently too advanced for a Bachelor's degree in computer science so lucky me I've got a friend who went to grad school. What's a Monte Carlo method you ask? Buddy, I've only got a Bachelor's degree in computer science; I barely understand it. [Here's the Wikipedia article on the thing](https://en.wikipedia.org/wiki/Monte_Carlo_method) if you really want to learn about it yourself. The short version of why we're using it here is that instead of needing to define a formula for calculating how much this thing is going to cost (like I tried to do with ChatGPT), we can just use a random number generator to simulate rolling the dice like a million times. It's like that Dr. Strange "I've looked into 14,000,605 futures" thing only instead of finding the one where I win, I find the one that's most likely to happen.
 
 So what happens (loosely) is that in each simulation, it rolls the dice to see if it succeeds. If it doesn't, it rolls again until either it does succeed or it reaches the maximum attempts, at which point it gives up. Outside of the individual simulations is a count of how many times it rolls in total across the simulations. Once all the simulations are complete, it divides the number of rolls by the number of simulations and subtracts down to the nearest integer that isn't itself ( so 2 if its 2.5, 1 if it's 2). Then this average number of additional attempts is multiplied by the cost of additional attempts and added to the cost of the initial attempt.
 
-With this method I've gotten... much higher numbers. Which is unfortunate, but if it's more accurate, I'd rather have them. Gotta know how much money I'm actually asking for from my investors. Below I've included tables the (hypothetical) costs of the spells as calculated by this program. Technically I can't actually learn any of the spells above level 3, and I can only learn level 2 and 3 spells starting at level 17 and 20. But it's fun to hypothesize.
+With this method I've gotten... much higher numbers. Like, close to *double* what I got with the first method in some cases (see the costs for learning level 5 spells at level 9). This is unfortunate, but if they're more accurate, I'd rather have them. Gotta know how much money I actually need to ask for from my investors. Below I've included tables the (hypothetical) costs of the spells as calculated by this program. Technically I can't actually learn any of the spells above level 3, and I can only learn level 2 and 3 spells starting at level 17 and 20. But it's fun to hypothesize.
 
 #### Gold
 
@@ -139,13 +148,13 @@ While these numbers are indeed higher, what you'll notice especially with the Go
 
 ## In Conculsion
 
-**Why did I do this?** Because it was fun. Because it helped me sharpen skills I haven't used in a while. And because I care enough about this silly little roleplaying game to invest another nerdy skill of mine into enhancing my roleplay.
+**Why did I do this?** - Because it was fun. Because it helped me sharpen skills I haven't used in a while. And because I care enough about this silly little roleplaying game to invest another nerdy skill of mine into enhancing my roleplay.
 
-**Aren't there better ways for me to represent what I'm actually calculating here?** Probably, but that would require recognizing what those better ways are and knowing how to produce them with my Python/C hybrid app. I'm not even sure how to get an array from C to Python. Maybe I should be trying to give a graph that shows the distribution of attempts a simulation had to do, like a bell curve or something. It would probably also show me if I needed to increase the number of attempts if everything was lopsided toward the high end of the graph.
+**Aren't there better ways for me to represent what I'm actually calculating here?** - Probably, but that would require recognizing what those better ways are and knowing how to produce them with my Python/C hybrid app. I'm not even sure how to get an array from C to Python. Maybe I should be trying to produce a graph that shows the distribution of attempts a simulation had to do, like a bell curve or something. It would probably also show me if I needed to increase the number of attempts if everything was lopsided toward the high end of the graph.
 
-**Are there any other things I'd like to do with this?** I think it could be fun to figure out how to do this stuff on a GPU. The program really isn't so intense as to need a GPU, but given that GPUs excel at doing a bunch of the same task with only some variants on the input between workers, I think it would be a good project for me to learn how to do some GPU programming on. Also fix the fact that I sucked at doing it in college. I think I'd also like to figure out the full domain of the problem and run the program against that. Then you'd just have one massive table that you could lookup the cost on based on the stats of your character. Honestly I could probably just write a Python script to generate that input for me.
+**Are there any other things I'd like to do with this?** - I think it could be fun to figure out how to do this stuff on a GPU. The program really isn't so intense as to need a GPU, but given that GPUs excel at doing a bunch of the same task with only some variants on the input between workers, I think it would be a good project for me to learn how to do some GPU programming on. Also fix the fact that I sucked at doing it in college. I think I'd also like to figure out the full domain of the problem and run the program against that. Then you'd just have one massive table that you could lookup the cost on based on the stats of your character. Honestly I could probably just write a Python script to generate that input for me. Finally, I could see myself *eventually* adding functionality to calculate what happens if I get magical bonuses or assistance. But that's a problem for *much* later whenever I get the bug to do this again.
 
-**Will I make something like this again?** Possibly. Depends on if I get given a sufficiently interesting problem that can be solved with a little math and a couple files of code. I've certainly tried for a couple things in the past, though most didn't get that far.
+**Will I make something like this again?** - Possibly. Depends on if I get given a sufficiently interesting problem that can be solved with a little math and a couple files of code. I've certainly tried for a couple things in the past, though most didn't get this far. Programming is generally more of a skill that I reserve for my job than as a hobby, but clearly with a compelling enough problem, I could do a little on the side too.
 
 ## Special Thanks
 

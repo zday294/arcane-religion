@@ -5,3 +5,4 @@ arclib.so
 *.csv
 __pycache__
 .DS_Store
+!spell-listing.csv
