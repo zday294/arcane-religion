@@ -1,4 +1,4 @@
-simulations: 100000
+simulations: 1000000
 attempts: 100
 spell-table-file: spell-listing.csv
 player-stats-file: caladon-stats.csv
