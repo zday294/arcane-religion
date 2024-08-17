@@ -4,7 +4,7 @@ The problem with being a nerd in two different fields is that occasionally you e
 
 ## Why did you make this? What's this thing even trying to do?
 
-That's a long story, and givent that most people who read a README are just trying to get an app running, I have elected to move that long story to [LONGSTORY.md](LONGSTORY.md). It will explain a lot, including what prompted all this, the process I'm attempting to represent with the application, a description of previous attempts to quantify this process, and a brief explanation of the math going on here (an explanation from someone who barely understands it himself mind you, so it will be like one sentence followed by a link to the Wikipedia article about the math).
+That's a long story, and given that most people who read a README are just trying to get an app running, I have elected to move that long story to [LONGSTORY.md](LONGSTORY.md). It will explain a lot, including what prompted all this, the process I'm attempting to represent with the application, a description of previous attempts to quantify this process, and a brief explanation of the math going on here (an explanation from someone who barely understands it himself mind you, so it's really just a link to the Wikipedia article about the math and an incredibly rough to explanation summary).
 
 ## Why are there C files in here?
 
@@ -12,19 +12,19 @@ I need to use a random number generator *a lot* in here, so I decided to use C t
 
 ## Install and Run Instructions
 
-Fundamental thing you need to understand is that I made this thing on a Mac for pretty much exclusively myself and writing this README is more an exercise in documentation than intent to make full instructions. As such, instructions are written for Mac and if you want to run this on a different platform, consider this an opportunity to explore learning how to port an application to your system.
+Fundamental thing you need to understand is that I made this thing on a Mac for pretty much exclusively myself and writing this README is more an exercise in documentation than an intent to make comprehensive instructions. As such, instructions are written for Mac and if you want to run this on a different platform, consider this an opportunity to explore learning how to port an application to your system.
 
 ### Python
 
-First, make sure you have Python 3 installed. It's kind essential.
+First, make sure you have Python 3 installed. This is a Python app after all.
 
-This project uses a yaml library called `pyyaml`. You can install it with the command `pip3 install pyyaml` on Mac. This library is necessary to read the config file. Yes this project *is* how I learned that YAML's resemblance to Python with it's use of indentation as a rigid means of separation
+This project uses a yaml library called `pyyaml`. You can install it with the command `pip3 install pyyaml` on Mac. This library is necessary to read the config file. Yes this project *is* how I learned that YAML's resemblance to Python with it's use of indentation as a rigid means of separation is not actually indicitive of it being a built in part of Python. Learning opportunities abounded in working on this.
 
 ### C Stuff
 
 If you have the `make` utility installed, you should be able to just use that. The commands are `make base` and `make shared`. Together, these will build the C project as a shared object file.
 
-If you don't have the `make` utility installed, either install it or use the command under the listings `base` and `shared` in the Makefile.
+If you don't have the `make` utility installed, either install it (using either xcode or Homebrew) or use the command under the listings `base` and `shared` in the Makefile.
 
 ### Supplementary Files
 
@@ -41,7 +41,15 @@ If you don't have the `make` utility installed, either install it or use the com
 
 #### spell-table-file
 
-The spell table file represents the table of costs and difficulties for learning the spells. 
+The spell table file represents the table of costs and difficulties for learning the spells. A file with the table my DM gave me for this endeavor is included in the repository as [spell-listing.csv](spell-listing.csv). If you wished to tweak the numbers or include levels higher than my DM did, your file needs to include the following fields:
+
+- `level` : The spell's level
+- `gp-init` : The base gold cost of learning the spell.
+- `gp-setback` : The additional gold required to make an additonal attempt after a failure. As written, this field is just 1/3 of the gp-init field.
+- `time-init` : The base time of learning the spell.
+- `time-setback` : The additional time required to make an additonal attempt after a failure.
+- `religion` : The DC of the Religion check for decrypting the spell.
+- `arcana` : The DC of the Arcana check for translating the spell into arcane notation.
 
 ### Running the Application
 
