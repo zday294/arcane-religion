@@ -34,14 +34,14 @@ If you don't have the `make` utility installed, either install it (using either 
 
 - `simulations` : The number of times to run the simulation for each player/character
 - `attempts` : The maximum number of attempts before giving up in a single simulation
-- `spell-table-file`: TODO: explain this chart elsewhere first
+- `spell-table-file` : So this file is explained much more thoroughly in [LONGSTORY.md](LONGSTORY.md), but the short is taht it's the represenation of the chart for how expensive learning a spell of a given level is.
 - `player-stats-file` : The name of the input file with a list of each player you wish to do the calculation for. See below for required fields
 - `output-gold-file` : The desired name of the output file where the table for the gold costs will be written. [I should add a default later]
 - `output-time-file` : Same as gold file but for time.
 
 #### spell-table-file
 
-The spell table file represents the table of costs and difficulties for learning the spells. A file with the table my DM gave me for this endeavor is included in the repository as [spell-listing.csv](spell-listing.csv). If you wished to tweak the numbers or include levels higher than my DM did, your file needs to include the following fields:
+The spell table file represents the table of costs and difficulties for learning the spells. A file with the table my DM gave me for this endeavor is included in the repository as [spell-listing.csv](spell-listing.csv). If you wished to tweak the numbers or include levels higher than my DM did, your file needs to include the following fields as headers:
 
 - `level` : The spell's level
 - `gp-init` : The base gold cost of learning the spell.
@@ -50,6 +50,21 @@ The spell table file represents the table of costs and difficulties for learning
 - `time-setback` : The additional time required to make an additonal attempt after a failure.
 - `religion` : The DC of the Religion check for decrypting the spell.
 - `arcana` : The DC of the Arcana check for translating the spell into arcane notation.
+
+#### player-stats-file
+
+Ok, so this is the important one. This is your input where you put your player characters' relevant stats. Those stats are:
+
+- `name` : Ok techinically not relevant to the math, but it will make it clearer for you when you read the results
+- `level` : Also relevant for the results for comparing levels of the same character
+- `religion` : This is the bonus the character gets to their Religion check
+- `arana` : This is the bonus the character gets to their Arcana check
+
+These fields should be listed as headers in the file.
+
+#### output-gold-file/output-time-file
+
+These don't need to exist already; the app will create them for you if they don't. These are just names you want for the gold cost output file and the time in days output file.
 
 ### Running the Application
 
